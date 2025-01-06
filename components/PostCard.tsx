@@ -1,9 +1,11 @@
+import { useState, type MouseEvent } from "react";
+
 import { Card, notification } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-
 import Link from "next/link";
+
 import { useDeletePost } from "@/repositories/delete-post/use-delete-post";
-import { useState, type MouseEvent } from "react";
+
 import UpdatePostModal from "./UpdatePostModal";
 
 interface PostCardProps {
@@ -31,7 +33,7 @@ const PostCard = (props: PostCardProps) => {
         postID: id,
       },
       {
-        onSuccess: (data) => {
+        onSuccess: () => {
           refetchPosts();
           notif.success({
             message: "Post deleted successfully",

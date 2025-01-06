@@ -17,7 +17,5 @@ export const useGetPosts = (deps: Deps) => {
     placeholderData: (prev) => prev,
   });
 
-  console.log({ isFetching, isLoading });
-
   return { data, isLoading: isFetching, error, refetch };
 };

@@ -1,11 +1,12 @@
-import { Modal, Input, Form, Button, message, notification } from "antd";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
+import { Modal, Input, Form, Button, notification } from "antd";
 
 import type { FormProps } from "antd";
-import { setLocalStorage } from "@/utils/localStorage";
-import { createUser } from "@/repositories/create-user";
+
 import { useCreateUser } from "@/repositories/create-user/use-create-user";
-import { useRouter } from "next/router";
+import { setLocalStorage } from "@/utils/localStorage";
 
 type FieldType = {
   name?: string;

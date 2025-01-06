@@ -1,8 +1,7 @@
-import { Modal, Input, Form, Button, message, notification, Space } from "antd";
-import { useEffect, useState } from "react";
+import { Modal, Input, Form, Button, notification, Space } from "antd";
 
 import type { FormProps } from "antd";
-import { useCreateUser } from "@/repositories/create-user/use-create-user";
+
 import { useUpdatePost } from "@/repositories/update-post/use-update-post";
 
 type FieldType = {
@@ -27,7 +26,6 @@ const UpdatePostModal = (props: UpdatePostModalProps) => {
 
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     const { title, body } = values;
-    console.log({ values });
 
     if (!title || !body) return;
 

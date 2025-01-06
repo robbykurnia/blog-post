@@ -1,11 +1,14 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+
 import { Button, Card, Form, Input, List, notification } from "antd";
+
 import type { FormProps } from "antd";
+import type { GetServerSideProps } from "next";
 
 import { useGetPosts } from "@/repositories/get-posts";
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
-import { useState } from "react";
 import { useCreatePost } from "@/repositories/create-post/use-create-post";
+
 import PostCard from "@/components/PostCard";
 
 interface PostsPageProps {
@@ -56,7 +59,6 @@ const PostsPage = (props: PostsPageProps) => {
   };
 
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-    console.log({ values });
     const { body, title } = values;
     if (!body || !title) return;
 
@@ -67,7 +69,6 @@ const PostsPage = (props: PostsPageProps) => {
       },
       {
         onSuccess: (data) => {
-          console.log({ data });
           setLoading(false);
 
           notif.success({

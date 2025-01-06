@@ -1,9 +1,10 @@
-import { useGetPostDetail } from "@/repositories/get-post-detail";
-import type { GetServerSidePropsContext } from "next";
-
-import type { ParsedUrlQuery } from "querystring";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
+
+import type { GetServerSidePropsContext } from "next";
+import type { ParsedUrlQuery } from "querystring";
+
+import { useGetPostDetail } from "@/repositories/get-post-detail";
 import { useGetUserDetail } from "@/repositories/get-user-detail";
 
 interface Params extends ParsedUrlQuery {

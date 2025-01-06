@@ -29,7 +29,6 @@ export const createUser = async (deps: UserInput) => {
         },
       }
     );
-    console.log("User created successfully:", response.data);
     return response.data;
   } catch (error) {
     console.error("Error creating user");

@@ -7,8 +7,6 @@ export const createPost = async (deps: CreatePostInput) => {
   const token = getLocalStorage("token");
   const user = getLocalStorage("user");
 
-  console.log({ user });
-
   try {
     const response = await axios.post(
       "https://gorest.co.in/public/v2/posts",
